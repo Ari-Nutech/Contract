@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.n-container {
+  max-width: 1009px;
+  margin: auto;
+  width: 95%;
+}
+
+.bigNumber {
+  @apply mt-2;
+}
