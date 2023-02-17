@@ -77,8 +77,7 @@ function Create() {
 
         <div className="mt-10 m-auto">
           <form className="form" onSubmit={onSubmit}>
-            <div className='border p-10'>
-
+            <div className='border border-black/80 p-10'>
               <div className='flex justify-between items-center'>
                 <img src='/img/TREC.png' alt='' className='' />
                 <div className='text-center'>
@@ -925,16 +924,653 @@ function Create() {
                       All   covenants,   representations   and   warranties   in    this    contract    survive closing. If any representation of Seller in this contract is untrue on the Closing Date, Seller will be in default. Unless expressly prohibited by written agreement,   Seller   may   continue   to   show   the Property and receive, negotiate and accept back up offers.
                     </p>
                   </li>
-                  {/* 19 */}
+                  {/* 20 */}
                   <li className='bigNumber'>
                     <p>
                       <b>FEDERAL TAX REQUIREMENTS:</b>&nbsp;
                       If Seller is a "foreign person," as defined by Internal Revenue Code and its regulations, or if Seller   fails   to   deliver   an   affidavit   or   a   certificate   of   non-foreign status to Buyer that Seller is not a "foreign person," then Buyer shall   withhold   from   the   sales proceeds an amount sufficient to comply with applicable   tax   law   and   deliver   the   same   to   the Internal   Revenue   Service   together   with   appropriate   tax   forms.    Internal    Revenue    Service regulations require filing written reports   if   currency   in   excess   of   specified   amounts   is   received   in the transaction.
                     </p>
                   </li>
+                  {/* 21 */}
+                  <li className='bigNumber'>
+                    <p>
+                      <b>NOTICES:</b>&nbsp;
+                      All notices from one party to the other must   be   in   writing   and   are   effective   when mailed to, hand-delivered at, or transmitted by fax or electronic transmission as follows:
+                    </p>
+                    <div className='flex justify-between gap-6 mt-2'>
+                      <div className='w-full'>
+                        <p className='flex whitespace-nowrap'><b>To Buyer at: </b> <Input width={'full'} /> </p>
+                        <div className='mt-2'>
+                          <Input width={'full'} />
+                        </div>
+                        <p className='flex justify-between gap-9 whitespace-nowrap mt-2'>
+                          Phone:
+                          <Input width={'full'} />
+                        </p>
+                        <p className='flex whitespace-nowrap mt-2 gap-2'>E-mail/Fax: <Input width={'full'} /> </p>
+                        <p className='flex whitespace-nowrap mt-2 gap-2'>E-mail/Fax: <Input width={'full'} /> </p>
+                        <p className='mt-2'>
+                          With a copy to Buyer's agent at:
+                          <Input width={'full'} />
+                        </p>
+                      </div>
+                      <div className='w-full'>
+                        <p className='flex whitespace-nowrap'><b>To Seller at: </b> <Input width={'full'} /> </p>
+                        <div className='mt-2'>
+                          <Input width={'full'} />
+                        </div>
+                        <p className='flex justify-between gap-9 whitespace-nowrap mt-2'>
+                          Phone:
+                          <Input width={'full'} />
+                        </p>
+                        <p className='flex whitespace-nowrap mt-2 gap-2'>E-mail/Fax: <Input width={'full'} /> </p>
+                        <p className='flex whitespace-nowrap mt-2 gap-2'>E-mail/Fax: <Input width={'full'} /> </p>
+                        <p className='mt-2'>
+                          With a copy to Buyer's agent at:
+                          <Input width={'full'} />
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  {/* 22 */}
+                  <li className='bigNumber'>
+                    <p>
+                      <b>AGREEMENT OF PARTIES:</b>&nbsp;
+                      This   contract   contains    the    entire    agreement    of    the    parties and cannot be changed except by their written agreement.   Addenda   which   are   a   part   of   this contract are (Check all applicable boxes):
+                    </p>
+                    <div className='flex justify-between gap-6'>
+                      <div className='w-full'>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Third Party Financing Addendum</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Seller Financing Addendum</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for Property Subject to Mandatory Membership in a Property Owners Association</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Buyer's Temporary Residential Lease</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Loan Assumption Addendum</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for Sale of Other Property by Buyer</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for Reservation of Oil, Gas and Other Minerals</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for "Back-Up" Contract </p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for Coastal Area Property</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for Authorizing Hydrostatic Testing</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum Concerning Right to Terminate Due to Lender's Appraisal</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Environmental Assessment, Threatened or Endangered Species and Wetlands Addendum</p>
+                        </div>
+                      </div>
+                      <div className='w-full'>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Seller's Temporary Residential Lease</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Short Sale Addendum</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for Property Located Seaward of the Gulf Intracoastal Waterway</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for Seller's Disclosure of Information on Lead-based Paint and Lead-based Paint Hazards as Required by Federal Law</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum for Property in a Propane Gas System Service Area</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum Regarding Residential Leases</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum Regarding Fixture Leases</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p>Addendum containing Notice of Obligation to Pay Improvement District Assessment</p>
+                        </div>
+                        <div className='flex justify-start gap-3 items-start'>
+                          <Input type={'checkbox'} className="mt-[6px]" />
+                          <p className=''>Other (list): <Input width={'64'} /></p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  {/* 23 */}
+                  <li className='bigNumber'>
+                    <p>
+                      <b>CONSULT AN ATTORNEY BEFORE SIGNING:</b>&nbsp;
+                      TREC rules prohibit real estate brokers and sales agents from giving legal advice. READ THIS CONTRACT CAREFULLY.
+                    </p>
+                    <div className='flex justify-between gap-6 mt-2'>
+                      <div className='w-full'>
+                        <p className='flex whitespace-nowrap'>Buyer's Attorney is:<Input width={'full'} /> </p>
+                        <div className='mt-2'>
+                          <Input width={'full'} />
+                        </div>
+                        <p className='flex justify-between gap-6 whitespace-nowrap mt-2'>
+                          Phone:
+                          <Input width={'full'} />
+                        </p>
+                        <p className='flex whitespace-nowrap mt-2 gap-11'>Fax: <Input width={'full'} /> </p>
+                        <p className='flex whitespace-nowrap mt-2 gap-6'>E-mail: <Input width={'full'} /> </p>
+                      </div>
+                      <div className='w-full'>
+                        <p className='flex whitespace-nowrap'>Seller's Attorney is: <Input width={'full'} /> </p>
+                        <div className='mt-2'>
+                          <Input width={'full'} />
+                        </div>
+                        <p className='flex justify-between gap-6 whitespace-nowrap mt-2'>
+                          Phone:
+                          <Input width={'full'} />
+                        </p>
+                        <p className='flex whitespace-nowrap mt-2 gap-11'>Fax: <Input width={'full'} /> </p>
+                        <p className='flex whitespace-nowrap mt-2 gap-6'>E-mail: <Input width={'full'} /> </p>
+                      </div>
+                    </div>
+                  </li>
+                  {/*  */}
                 </ul>
               </div>
             </div>
+            <div className='border border-black/80 p-10 mt-10'>
+              <div className='border border-black mt-40 p-3'>
+                <p><b>EXECUTED the <Input width={20} />day of <Input width={64} /> (Effective Date).  </b></p>
+                <p><b>(BROKER: FILL IN THE DATE OF FINAL ACCEPTANCE.)</b></p>
+              </div>
+              <div className='mt-20 flex justify-between gap-6'>
+                <div className='w-full'>
+                  <Input width={'full'} />
+                  <p>Buyer</p>
+                </div>
+                <div className='w-full'>
+                  <Input width={'full'} />
+                  <p>Seller</p>
+                </div>
+              </div>
+              <div className='flex justify-between gap-6'>
+                <div className='w-full'>
+                  <Input width={'full'} />
+                  <p>Buyer</p>
+                </div>
+                <div className='w-full'>
+                  <Input width={'full'} />
+                  <p>Seller</p>
+                </div>
+              </div>
+              <div className='border border-black p-3 flex justify-between items-center gap-4 mt-40'>
+                <img src='/img/trec.png' alt='' />
+                <p className='text-sm'>The form of this contract has been approved by the Texas Real Estate Commission. TREC forms are intended for use only by trained real estate license holders. No representation is made as to the legal validity or adequacy of any provision in any specific transactions. It is not intended for   complex transactions. Texas Real Estate Commission, P.O. Box 12188, Austin, TX 78711-2188, (512) 936-3000 (http://www.trec.texas.gov) TREC NO. 20-17. This form replaces TREC NO. 20-16.</p>
+              </div>
+            </div>
+            <div className='border border-black/80 p-10 mt-10'>
+              <div>
+                <p className='text-center'><b>BROKER INFORMATION</b></p>
+                <p className='text-center'>(Print name(s) only. Do not sign)</p>
+
+                <div className='mt-10 flex justify-between gap-6'>
+                  <div className='w-full'>
+                    <div className='flex justify-between'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Other Broker Firm</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>License No.</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-start gap-4 mt-2'>
+                      <p>represents</p>
+                      <div>
+                        <p><Input type={'checkbox'} /> Buyer only as Buyer's agent</p>
+                        <p><Input type={'checkbox'} /> Seller as Listing Broker's subagent</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Associate's Name</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>License No.</p>
+                      </div>
+                    </div>
+                    <div className='mt-2'>
+                      <Input width={'full'} className={'text-left'} />
+                      <p>Team Name</p>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Associate's Email Address</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Phone</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>Licensed Supervisor of Associate</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>License No.</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>Other Broker's Address</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Phone</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>City</p>
+                      </div>
+                      <div className='w-30'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>State</p>
+                      </div>
+                      <div className='w-30'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Zip</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='w-full'>
+                    <div className='flex justify-between'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Listing Broker Firm</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>License No.</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-start gap-4 mt-2'>
+                      <p>represents</p>
+                      <div>
+                        <p><Input type={'checkbox'} /> Seller and Buyer as an intermediary</p>
+                        <p><Input type={'checkbox'} /> Seller only as Seller's agent</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Listing Associate's Name</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>License No.</p>
+                      </div>
+                    </div>
+                    <div className='mt-2'>
+                      <Input width={'full'} className={'text-left'} />
+                      <p>Team Name</p>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>Listing Associate's Email Address</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Phone</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>Licensed Supervisor of Listing Associate</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>License No.</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>Listing Broker's Office Address</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Phone</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>City</p>
+                      </div>
+                      <div className='w-30'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>State</p>
+                      </div>
+                      <div className='w-30'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Zip</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>Selling Associate's Name</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>License No.</p>
+                      </div>
+                    </div>
+                    <div className=' mt-2'>
+                      <Input width={'full'} className={'text-left'} />
+                      <p className='whitespace-nowrap'>Team Name</p>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>Selling Associate's Email Address</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Phone</p>
+                      </div>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>Licensed Supervisor of Selling Associate</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>License No.</p>
+                      </div>
+                    </div>
+                    <div className=' mt-2'>
+                      <Input width={'full'} className={'text-left'} />
+                      <p className='whitespace-nowrap'>Selling Associate's Office Address</p>
+                    </div>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p className='whitespace-nowrap'>City</p>
+                      </div>
+                      <div className='w-30'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>State</p>
+                      </div>
+                      <div className='w-30'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Zip</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div className='mt-10'>
+                  <p>
+                    Disclosure: Pursuant to a previous, separate agreement (such as a MLS offer of compensation or other agreement between brokers), Listing Broker has agreed to pay Other Broker a fee
+                    (<Input width={'[300px]'} />)
+                    This disclosure is for informational purposes and does not change the previous agreement between brokers to pay or share a commission.
+                  </p>
+
+                </div>
+              </div>
+            </div>
+            <div className='border border-black/80 p-10 mt-10'>
+              <div>
+                <p className='text-center'><b>OPTION FEE RECEIPT</b></p>
+                <p className='mt-4'>Receipt of $(<Input width={'[300px]'} />) (Option Fee) in the form of (<Input width={'[300px]'} />) is acknowledged.</p>
+
+                <div className='flex justify-between gap-6 mt-4'>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-left'} />
+                    <p>Escrow Agent Old Republic Title/Naomi Flores</p>
+                  </div>
+                  <div className='w-full'>
+                    <Input type={'date'} width={'full'} className={'text-right'} />
+                    <p className='text-right'>Date</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='border border-black/80 p-10 mt-10'>
+              <div>
+                <p className='text-center'><b>EARNEST MONEY RECEIPT</b></p>
+                <p className='mt-4'>Receipt of $(<Input width={'[300px]'} />) Earnest Money in the form of (<Input width={'[300px]'} />) is acknowledged.</p>
+
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='w-full'>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Escrow Agent</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Received by</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='w-full'>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Email Address</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Date/Time</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-left'} />
+                    <p>Address</p>
+                  </div>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-right'} />
+                    <p className='text-right'>Phone</p>
+                  </div>
+                </div>
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='flex justify-between w-full'>
+                    <div className='w-full'>
+                      <Input width={'full'} className={'text-left'} />
+                      <p className='whitespace-nowrap'>City</p>
+                    </div>
+                    <div className='w-30'>
+                      <Input width={'full'} className={'text-right'} />
+                      <p className='text-right'>State</p>
+                    </div>
+                    <div className='w-30'>
+                      <Input width={'full'} className={'text-right'} />
+                      <p className='text-right'>Zip</p>
+                    </div>
+                  </div>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-right'} />
+                    <p className='text-right'>Fax</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='border border-black/80 p-10 mt-10'>
+              <div>
+                <p className='text-center'><b>CONTRACT RECEIPT</b></p>
+                <p className='mt-4'>Receipt of the Contract is acknowledged.</p>
+
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='w-full'>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Escrow Agent</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Received by</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='w-full'>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Email Address</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Date</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-left'} />
+                    <p>Address</p>
+                  </div>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-right'} />
+                    <p className='text-right'>Phone</p>
+                  </div>
+                </div>
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='flex justify-between w-full'>
+                    <div className='w-full'>
+                      <Input width={'full'} className={'text-left'} />
+                      <p className='whitespace-nowrap'>City</p>
+                    </div>
+                    <div className='w-30'>
+                      <Input width={'full'} className={'text-right'} />
+                      <p className='text-right'>State</p>
+                    </div>
+                    <div className='w-30'>
+                      <Input width={'full'} className={'text-right'} />
+                      <p className='text-right'>Zip</p>
+                    </div>
+                  </div>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-right'} />
+                    <p className='text-right'>Fax</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className='border border-black/80 p-10 mt-10'>
+              <div>
+                <p className='text-center'><b>ADDITIONAL EARNEST MONEY RECEIPT</b></p>
+                <p className='mt-4'>Receipt of $(<Input width={'[300px]'} />) additional Earnest Money in the form of (<Input width={'[300px]'} />) is acknowledged.</p>
+
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='w-full'>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Escrow Agent</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Received by</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='w-full'>
+                    <div className='flex justify-between mt-2'>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-left'} />
+                        <p>Email Address</p>
+                      </div>
+                      <div className='w-full'>
+                        <Input width={'full'} className={'text-right'} />
+                        <p className='text-right'>Date/Time</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-left'} />
+                    <p>Address</p>
+                  </div>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-right'} />
+                    <p className='text-right'>Phone</p>
+                  </div>
+                </div>
+                <div className='flex justify-between gap-6 mt-2'>
+                  <div className='flex justify-between w-full'>
+                    <div className='w-full'>
+                      <Input width={'full'} className={'text-left'} />
+                      <p className='whitespace-nowrap'>City</p>
+                    </div>
+                    <div className='w-30'>
+                      <Input width={'full'} className={'text-right'} />
+                      <p className='text-right'>State</p>
+                    </div>
+                    <div className='w-30'>
+                      <Input width={'full'} className={'text-right'} />
+                      <p className='text-right'>Zip</p>
+                    </div>
+                  </div>
+                  <div className='w-full'>
+                    <Input width={'full'} className={'text-right'} />
+                    <p className='text-right'>Fax</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-6 flex justify-center gap-5">
               <input
                 disabled={isLoading}
