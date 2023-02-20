@@ -3,11 +3,17 @@
 @tailwind utilities;
 
 .n-container {
-  max-width: 1009px;
+  max-width: 1300px;
   margin: auto;
   width: 95%;
 }
 
 .bigNumber {
   @apply mt-2;
+}
+
+.sticky {
+  position: fixed;
+  top: 10;
+  width: 100%;
 }

@@ -1,51 +1,25 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ auth: { isAuthenticated }, logout }: any) => {
-  const authLinks = (
-    <ul>
-      <li>
-        <Link to="/profiles">Developers</Link>
-      </li>
-      <li>
-        <Link to="/posts">Posts</Link>
-      </li>
-      <li>
-        <Link to="/dashboard">
-          <i className="fas fa-user" /> <span className="hide-sm">Dashboard</span>
-        </Link>
-      </li>
-      <li>
-        <a onClick={logout} href="#!">
-          <i className="fas fa-sign-out-alt" /> <span className="hide-sm">Logout</span>
-        </a>
-      </li>
-    </ul>
-  );
-
-  const guestLinks = (
-    <ul>
-      <li>
-        <Link to="/profiles">Developers</Link>
-      </li>
-      <li>
-        <Link to="/register">Register</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-    </ul>
-  );
+const Navbar = () => {
 
   return (
-    <nav className="navbar bg-dark">
-      <h1>
-        <Link to="/">
-          <i className="fas fa-code" /> DevConnector
+    <div className='w-full shadow'>
+      <div className='n-container flex justify-between items-center gap-10 py-4'>
+        <Link to={'/'}>
+          <img src='/img/HorizontalLogoNegative.png' alt='' className='h-10' />
         </Link>
-      </h1>
-      <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-    </nav>
+        <div className='flex justify-end items-center gap-10'>
+          <Link to="/auth/signin">
+            <button className='text-[#2633ED] font-medium text-lg'>Sign In</button>
+          </Link>
+          <Link to="/auth/signup">
+            <button className='text-[#2633ED] font-medium text-lg'>Sign Up</button>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };
+
 export default Navbar;
