@@ -19,7 +19,7 @@ export default function StepSelector({ activeStep, setActiveStep }: Props) {
     return (
         <>
             <Sticky topOffset={80}>
-                {({ style }) =>
+                {({ style }: any) =>
                     <div className='bg-white pt-10' style={style} id="header">
                         <div className='pt-10 shadow-md p-4 sm:p-6 rounded-lg '>
                             {steps.map((step, key) => {

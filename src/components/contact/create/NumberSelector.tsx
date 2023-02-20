@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Sticky } from 'react-sticky';
 
 
@@ -21,7 +21,7 @@ export default function NumberSelector() {
 
     return (
         <Sticky topOffset={10}>
-            {({ style }) =>
+            {({ style }: any) =>
                 <div className='flex justify-start flex-wrap gap-1 bg-white py-3' style={style} id="header">
                     {
                         Array.from(Array(23), (e, i) => {
