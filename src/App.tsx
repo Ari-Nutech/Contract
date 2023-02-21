@@ -12,6 +12,8 @@ import GetContacts from './components/contact/Get';
 import './App.css';
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from './components/layout/Navbar';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path="/contact/create" element={<CreateContact />} />
             <Route path="/contact/get" element={<GetContacts />} />
 
+            <Route path="/auth/signin" element={<SignIn />} />
+            <Route path="/auth/signup" element={<SignUp />} />
           </Routes>
         </Router>
         <ToastContainer />
