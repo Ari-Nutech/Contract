@@ -14,8 +14,16 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from './components/layout/Navbar';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
+// import { useEffectOnce } from './hooks/useEffectOnce';
+// import { getUUID } from './utils';
 
 function App() {
+
+  // useEffectOnce(() => {
+  //   const res = getUUID("HelloWorld")
+  //   alert(res)
+  // })
+
   return (
     <StickyContainer>
       <Provider store={store}>

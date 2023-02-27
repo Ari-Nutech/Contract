@@ -1,3 +1,6 @@
+import crypto from "crypto";
+import hexToUuid from "hex-to-uuid";
+
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -74,6 +77,15 @@ function validURL(str: string) {
   return !!pattern.test(str);
 }
 
+function getUUID(str: string) {
+  var md5Bytes = crypto.createHash("md5").update(str).digest();
+  md5Bytes[6] &= 0x0f; // clear version
+  md5Bytes[6] |= 0x30; // set to version 3
+  md5Bytes[8] &= 0x3f; // clear variant
+  md5Bytes[8] |= 0x80; // set to IETF variant
+  return hexToUuid(md5Bytes.toString("hex"));
+}
+
 export {
   getDeltaTimeFromNow,
   formatDate,
@@ -82,4 +94,5 @@ export {
   formatDateTime,
   formatDateDash,
   validURL,
+  getUUID,
 };
