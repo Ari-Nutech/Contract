@@ -3,10 +3,11 @@ import { Sticky } from 'react-sticky';
 
 interface Props {
     activeStep: number,
-    setActiveStep: Function
+    setActiveStep: Function,
+    onInitiateTransaction: Function
 }
 
-export default function StepSelector({ activeStep, setActiveStep }: Props) {
+export default function StepSelector({ activeStep, setActiveStep, onInitiateTransaction }: Props) {
     const steps = [
         { no: 1, title: 'CONTRACT', description: '' },
         { no: 2, title: 'BROKER INFORMATION', description: '' },
@@ -53,7 +54,7 @@ export default function StepSelector({ activeStep, setActiveStep }: Props) {
                             <div className='mt-6 flex justify-between items-center gap-10'>
                                 {activeStep > 1 ? <button className='border border-black/30 px-4 py-1.5 rounded-lg' onClick={() => { setActiveStep(activeStep - 1) }}>Prev</button> : <div></div>}
                                 {activeStep < steps.length ? <button className='border border-black/30 px-4 py-1.5 rounded-lg' onClick={() => { setActiveStep(activeStep + 1) }}>Next</button> : <div></div>}
-                                {activeStep === steps.length && <button className='border border-black/30 px-4 py-1.5 rounded-lg'>Submit</button>}
+                                {activeStep === steps.length && <button className='border border-black/30 px-4 py-1.5 rounded-lg' onClick={() => onInitiateTransaction()}>Submit</button>}
                             </div>
                         </div>
                     </div>
