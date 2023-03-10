@@ -17,120 +17,121 @@ export default function Index() {
 
     const [activeStep, setActiveStep] = useState(1);
 
+    const [transactionInfo, setTransactionInfo] = useState({});
 
     const onInitiateTransaction = async () => {
         const req = {
             "buyer": {
-                "addressLine1": "string",
-                "addressLine2": "string",
-                "city": "string",
-                "country": "string",
-                "emailId": "string",
-                "firstName": "string",
-                "lastName": "string",
-                "password": "string",
-                "phoneNumber": "string",
-                "state": "string",
+                "addressLine1": "123 S Main Seguin",
+                "addressLine2": "",
+                "city": "Seguin",
+                "country": "US",
+                "emailId": "doe1@yahoo.com",
+                "firstName": "John",
+                "lastName": "Doe",
+                "password": "",
+                "phoneNumber": "2104228637",
+                "state": "TX",
                 "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                "zipCode": "string"
+                "zipCode": "78155"
             },
             "buyerAgent": {
-                "addressLine1": "string",
-                "addressLine2": "string",
-                "city": "string",
-                "country": "string",
-                "emailId": "string",
-                "firstName": "string",
-                "lastName": "string",
-                "password": "string",
-                "phoneNumber": "string",
-                "state": "string",
+                "addressLine1": "3201 Cherry Ridge Dr Ste. 213",
+                "addressLine2": "",
+                "city": "San Antonio",
+                "country": "US",
+                "emailId": "",
+                "firstName": "",
+                "lastName": "",
+                "password": "",
+                "phoneNumber": "",
+                "state": "TX",
                 "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                "zipCode": "string"
+                "zipCode": "78248"
             },
             "coordinator": {
-                "addressLine1": "string",
-                "addressLine2": "string",
-                "city": "string",
-                "country": "string",
-                "emailId": "string",
-                "firstName": "string",
-                "lastName": "string",
-                "password": "string",
-                "phoneNumber": "string",
-                "state": "string",
+                "addressLine1": "",
+                "addressLine2": "",
+                "city": "",
+                "country": "",
+                "emailId": "",
+                "firstName": "",
+                "lastName": "",
+                "password": "",
+                "phoneNumber": "",
+                "state": "",
                 "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                "zipCode": "string"
+                "zipCode": ""
             },
-            "dueDiligence": "2023-02-27T01:55:07.691Z",
+            "dueDiligence": "2023-03-23T01:55:07.691Z",
             "loanOfficer": {
-                "addressLine1": "string",
-                "addressLine2": "string",
-                "city": "string",
-                "country": "string",
-                "emailId": "string",
-                "firstName": "string",
-                "lastName": "string",
-                "password": "string",
-                "phoneNumber": "string",
-                "state": "string",
+                "addressLine1": "",
+                "addressLine2": "",
+                "city": "",
+                "country": "",
+                "emailId": "",
+                "firstName": "",
+                "lastName": "",
+                "password": "",
+                "phoneNumber": "",
+                "state": "",
                 "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                "zipCode": "string"
+                "zipCode": ""
             },
-            "projectClosingDay": "2023-02-27T01:55:07.691Z",
+            "projectClosingDay": "2023-03-23T01:55:07.691Z",
             "property": {
-                "addressLine1": "string",
-                "addressLine2": "string",
-                "addressType": "string",
-                "city": "string",
-                "country": "string",
+                "addressLine1": "2634 BlackBear Dr. New Braunfels TX",
+                "addressLine2": "",
+                "addressType": "",
+                "city": "New Braunefels",
+                "country": "US",
                 "propertyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
                 "salePrice": "10.53",
-                "state": "string",
-                "transactionId": "string",
-                "zipCode": "string"
+                "state": "TX",
+                "transactionId": "",
+                "zipCode": "78132"
             },
             "seller": {
-                "addressLine1": "string",
-                "addressLine2": "string",
-                "city": "string",
-                "country": "string",
-                "emailId": "string",
-                "firstName": "string",
-                "lastName": "string",
-                "password": "string",
-                "phoneNumber": "string",
-                "state": "string",
+                "addressLine1": "687 Austin St",
+                "addressLine2": "",
+                "city": "New Braunfels",
+                "country": "US",
+                "emailId": "bttholmes@yahoo.com",
+                "firstName": "Mike",
+                "lastName": "Black",
+                "password": "",
+                "phoneNumber": "2195598514",
+                "state": "TX",
                 "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                "zipCode": "string"
+                "zipCode": "78132"
             },
             "sellerAgent": {
-                "addressLine1": "string",
-                "addressLine2": "string",
-                "city": "string",
-                "country": "string",
-                "emailId": "string",
-                "firstName": "string",
-                "lastName": "string",
-                "password": "string",
-                "phoneNumber": "string",
-                "state": "string",
+                "addressLine1": "107 S River St.",
+                "addressLine2": "",
+                "city": "Seguin",
+                "country": "US",
+                "emailId": "",
+                "firstName": "",
+                "lastName": "",
+                "password": "",
+                "phoneNumber": "",
+                "state": "TX",
                 "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                "zipCode": "string"
+                "zipCode": "78155"
             },
             "titleAgent": {
-                "addressLine1": "string",
-                "addressLine2": "string",
-                "city": "string",
-                "country": "string",
-                "emailId": "string",
-                "firstName": "string",
-                "lastName": "string",
-                "password": "string",
-                "phoneNumber": "string",
-                "state": "string",
+                "addressLine1": "",
+                "addressLine2": "",
+                "city": "",
+                "country": "",
+                "emailId": "",
+                "firstName": "",
+                "lastName": "",
+                "password": "",
+                "phoneNumber": "",
+                "state": "",
                 "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                "zipCode": "string"
+                "zipCode": ""
             }
         }
         setLoading(true);
@@ -141,11 +142,18 @@ export default function Index() {
 
     return (
         <div className='flex justify-center gap-10 py-10'>
-            <div className='w-[380px]'>
+            <div className='hidden lg:block w-[380px]'>
                 <StepSelector activeStep={activeStep} setActiveStep={setActiveStep} onInitiateTransaction={onInitiateTransaction} />
             </div>
-            <div className='w-[1009px]'>
-                {activeStep === 1 && <><NumberSelector /><Contract /></>}
+            <div className='w-11/12 xl:w-[1009px]'>
+                {activeStep === 1 && <>
+                    <Contract
+                        activeStep={activeStep}
+                        setActiveStep={setActiveStep}
+                        transactionInfo={transactionInfo}
+                        setTransactionInfo={setTransactionInfo}
+                    />
+                </>}
                 {activeStep === 2 && <BrokerInformation />}
                 {activeStep === 3 && <OptionFeeReceipt />}
                 {activeStep === 4 && <EarnestMoneyReceipt />}

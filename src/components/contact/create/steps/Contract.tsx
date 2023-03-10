@@ -1,14 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffectOnce } from '../../../../hooks/useEffectOnce';
+import Checkbox from '../Checkbox';
 import Input from '../Input'
+import NumberSelector from '../NumberSelector';
+import Paginator from '../Paginator';
 
-export default function Contract() {
+export default function Contract({ activeStep, setActiveStep, transactionInfo, setTransactionInfo }: any) {
     useEffectOnce(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     });
 
+    const [buyerName, setBuyerName] = useState("")
+    const [sellerName, setSellerName] = useState("")
+    const [propertyCity, setPropertyCity] = useState("")
+    const [propertyCounty, setPropertyCounty] = useState("")
+    const [propertyAddress, setPropertyAddress] = useState("")
+    const [propertyZipCode, setPropertyZipCode] = useState("")
+    const [closingDate, setClosingDate] = useState(new Date())
+
+    const [buyerAttorney, setBuyerAttorney] = useState("");
+
+    async function moveNext() {
+
+
+
+        setActiveStep(activeStep + 1)
+    }
+
     return (
         <div>
+            <Paginator activeStep={activeStep} moveNext={moveNext} />
+            <NumberSelector />
             <div className='border border-black/80 p-10 mt-3'>
                 <div className='flex justify-between items-center' id="big0">
                     <img src='/img/TREC.png' alt='' className='' />
@@ -23,9 +45,9 @@ export default function Contract() {
                     <ul className='list-decimal'>
                         {/* 1 */}
                         <li className='bigNumber' id="big1">
-                            <b>PARTIES:</b> The parties to this contract are
-                            <Input width={64} />(Seller) and
-                            <Input width={64} />(Buyer).
+                            <b>PARTIES:</b> The parties to this contract are&nbsp;
+                            <Input width={64} value={sellerName} setValue={setSellerName} placeholder="Mike Black, Julianne Black" className="text-center" />(Seller) and&nbsp;
+                            <Input width={64} value={buyerName} setValue={setBuyerName} placeholder="John Doe, Jane Doe" className="text-center" />(Buyer).
                             Seller agrees to sell and convey to Buyer and Buyer agrees to buy from Seller the Propety defines below.
                         </li>
                         {/* 2 */}
@@ -34,7 +56,13 @@ export default function Contract() {
                             <div className='flex justify-start gap-4'>
                                 <p>A.</p>
                                 <p>
-                                    LAND: Lot <Input width={20} /> Block <Input width={20} />, <Input width={64} /> Addition, City of <Input width={30} />, County of <Input width={30} />, Texas, Known as <Input width={64} />(address/zip code), or as described on attached exhibit.
+                                    LAND: Lot <Input width={20} placeholder="4" className="text-center" />
+                                    Block <Input width={20} placeholder="7" className="text-center" />,&nbsp;
+                                    <Input width={64} placeholder="Havenwood Estates" className="text-center" /> Addition,
+                                    City of <Input width={40} value={propertyCity} setValue={setPropertyCity} placeholder="New Braunfels" className="text-center" />,
+                                    County of <Input width={30} value={propertyCounty} setValue={setPropertyCounty} placeholder="Comal" className="text-center" />, Texas,
+                                    Known as <Input width={80} value={propertyAddress} setValue={setPropertyAddress} placeholder="2634 Black Bear Dr. New Braunefels TX" className="text-center" />
+                                    <Input width={20} value={propertyZipCode} setValue={setPropertyZipCode} placeholder="78132" className="text-center" />(address/zip code), or as described on attached exhibit.
                                 </p>
                             </div>
 
@@ -88,14 +116,18 @@ export default function Contract() {
                             <div className='flex justify-start gap-4 w-full'>
                                 <p>B.</p>
                                 <div className='w-full'>
-                                    <p>Sum of all financing described in the attached: X Third Party Financing Addendum,</p>
+                                    <p>Sum of all financing described in the attached:</p>
                                     <div className='flex justify-between gap-2 w-full'>
-                                        <div className='flex gap-2'>
-                                            <Input type="checkbox" />
+                                        <div className='flex items-center gap-2'>
+                                            <Checkbox />
+                                            <p className='whitespace-nowrap'>Third Party Financing Addendum</p>
+                                        </div>
+                                        <div className='flex items-center gap-2'>
+                                            <Checkbox />
                                             <p className='whitespace-nowrap'>Loan Assumption Addendum</p>
                                         </div>
-                                        <div className='flex gap-2'>
-                                            <Input type="checkbox" />
+                                        <div className='flex items-center gap-2'>
+                                            <Checkbox />
                                             <p className='whitespace-nowrap'>Seller Financing Addendum</p>
                                         </div>
                                         <div className='flex justify-end items-end w-full'>
@@ -127,7 +159,7 @@ export default function Contract() {
 
                             <div className='flex justify-start items-start gap-2'>
                                 <div className='flex justify-start items-center gap-2'>
-                                    <Input type={'checkbox'} />
+                                    <Checkbox />
                                     <p>A.</p>
                                 </div>
                                 <p>
@@ -136,7 +168,7 @@ export default function Contract() {
                             </div>
                             <div className='flex justify-start items-start gap-2'>
                                 <div className='flex justify-start items-center gap-2'>
-                                    <Input type={'checkbox'} />
+                                    <Checkbox />
                                     <p>B.</p>
                                 </div>
                                 <p>
@@ -145,7 +177,7 @@ export default function Contract() {
                             </div>
                             <div className='flex justify-start items-start gap-2'>
                                 <div className='flex justify-start items-center gap-2'>
-                                    <Input type={'checkbox'} />
+                                    <Checkbox />
                                     <p>C.</p>
                                 </div>
                                 <div>
@@ -155,7 +187,7 @@ export default function Contract() {
 
                                     <div className='flex justify-start items-start gap-4'>
                                         <div className='flex justify-start items-center gap-2'>
-                                            <Input type={'checkbox'} />
+                                            <Checkbox />
                                             <p>(1)</p>
                                         </div>
                                         <p>
@@ -164,7 +196,7 @@ export default function Contract() {
                                     </div>
                                     <div className='flex justify-start items-start gap-4'>
                                         <div className='flex justify-start items-center gap-2'>
-                                            <Input type={'checkbox'} />
+                                            <Checkbox />
                                             <p>(2)</p>
                                         </div>
                                         <p>
@@ -255,8 +287,8 @@ export default function Contract() {
                                 <div>
                                     <p>
                                         TITLE POLICY: Seller shall furnish to Buyer at
-                                        {` `}<Input type={'checkbox'} /> Seller's
-                                        {` `}<Input type={'checkbox'} /> Buyer's
+                                        {` `}<Checkbox /> Seller's
+                                        {` `}<Checkbox /> Buyer's
                                         expense an owner policy of title insurance (Title Policy) issued by
                                         <Input width={64} />
                                         (Title Company) in the amount of the Sales Price, dated at or after closing, insuring Buyer against loss under the provisions of the Title Policy, subject to the promulgated exclusions (including existing building and zoning ordinances) and the following exceptions:
@@ -313,7 +345,7 @@ export default function Contract() {
                                                 </p>
                                                 <div className='flex justify-start items-start gap-4'>
                                                     <div className='flex justify-start items-center gap-2'>
-                                                        <Input type={'checkbox'} />
+                                                        <Checkbox />
                                                         <p>(i)</p>
                                                     </div>
                                                     <p>
@@ -322,13 +354,13 @@ export default function Contract() {
                                                 </div>
                                                 <div className='flex justify-start items-start gap-4'>
                                                     <div className='flex justify-start items-center gap-2'>
-                                                        <Input type={'checkbox'} />
+                                                        <Checkbox />
                                                         <p>(ii)</p>
                                                     </div>
                                                     <p>
                                                         will be amended to read, "shortages in area" at the expense of
-                                                        {` `}<Input type={'checkbox'} /> Seller's
-                                                        {` `}<Input type={'checkbox'} /> Buyer's
+                                                        {` `}<Checkbox /> Seller's
+                                                        {` `}<Checkbox /> Buyer's
                                                     </p>
                                                 </div>
                                             </div>
@@ -361,21 +393,21 @@ export default function Contract() {
                                     <div>
                                         <div className='flex justify-start items-start gap-4'>
                                             <div className='flex justify-start items-center gap-2'>
-                                                <Input type={'checkbox'} />
+                                                <Checkbox />
                                                 <p>(1)</p>
                                             </div>
                                             <p>
                                                 Within <Input width={20} /> days after the Effective Date of this contract, Seller shall furnish to Buyer and
                                                 Title Company Seller's existing survey of the Property and   a   Residential   Real   Property Affidavit promulgated by the Texas Department of Insurance (T-47 Affidavit). If Seller fails to furnish   the   existing   survey   or   affidavit   within   the   time   prescribed,   Buyer    shall obtain a new survey at Seller's expense no later than 3 days prior to Closing Date. If the existing survey or affidavit is not acceptable to Title Company or Buyer's lender(s),
                                                 Buyer shall obtain a new survey at
-                                                {` `}<Input type={'checkbox'} /> Seller's
-                                                {` `}<Input type={'checkbox'} /> Buyer's
+                                                {` `}<Checkbox /> Seller's
+                                                {` `}<Checkbox /> Buyer's
                                                 expense no later than 3 days prior to Closing Date.
                                             </p>
                                         </div>
                                         <div className='flex justify-start items-start gap-4'>
                                             <div className='flex justify-start items-center gap-2'>
-                                                <Input type={'checkbox'} />
+                                                <Checkbox />
                                                 <p>(2)</p>
                                             </div>
                                             <p>
@@ -384,7 +416,7 @@ export default function Contract() {
                                         </div>
                                         <div className='flex justify-start items-start gap-4'>
                                             <div className='flex justify-start items-center gap-2'>
-                                                <Input type={'checkbox'} />
+                                                <Checkbox />
                                                 <p>(3)</p>
                                             </div>
                                             <p>
@@ -421,7 +453,7 @@ export default function Contract() {
                                         <div className='flex justify-start items-start gap-4'>
                                             <p>(2)</p>
                                             <p>
-                                                MEMBERSHIP IN PROPERTY OWNERS ASSOCIATION(S): The Property <Input type={'checkbox'} />is <Input type={'checkbox'} />is not subject
+                                                MEMBERSHIP IN PROPERTY OWNERS ASSOCIATION(S): The Property <Checkbox />is <Checkbox />is not subject
                                                 to mandatory membership in a property owners association(s).
                                                 If the Property is subject to mandatory membership in a property owners association(s), Seller notifies Buyer under
                                                 §5.012, Texas Property Code, that, as a purchaser of property in the residential community identified in Paragraph 2A in which the Property is located, you are obligated to be a member of the property owners association(s).
@@ -516,7 +548,7 @@ export default function Contract() {
                                     <div>
                                         <div className='flex justify-start items-start gap-4'>
                                             <div className='flex justify-start items-center gap-2'>
-                                                <Input type={'checkbox'} />
+                                                <Checkbox />
                                                 <p>(1)</p>
                                             </div>
                                             <p>
@@ -525,7 +557,7 @@ export default function Contract() {
                                         </div>
                                         <div className='flex justify-start items-start gap-4'>
                                             <div className='flex justify-start items-center gap-2'>
-                                                <Input type={'checkbox'} />
+                                                <Checkbox />
                                                 <p>(2)</p>
                                             </div>
                                             <p>
@@ -534,7 +566,7 @@ export default function Contract() {
                                         </div>
                                         <div className='flex justify-start items-start gap-4'>
                                             <div className='flex justify-start items-center gap-2'>
-                                                <Input type={'checkbox'} />
+                                                <Checkbox />
                                                 <p>(3)</p>
                                             </div>
                                             <p>
@@ -564,7 +596,7 @@ export default function Contract() {
                                     <div>
                                         <div className='flex justify-start items-start gap-4'>
                                             <div className='flex justify-start items-center gap-2'>
-                                                <Input type={'checkbox'} />
+                                                <Checkbox />
                                                 <p>(1)</p>
                                             </div>
                                             <p>
@@ -573,7 +605,7 @@ export default function Contract() {
                                         </div>
                                         <div className='flex justify-start items-start gap-4'>
                                             <div className='flex justify-start items-center gap-2'>
-                                                <Input type={'checkbox'} />
+                                                <Checkbox />
                                                 <p>(2)</p>
                                             </div>
                                             <p>
@@ -638,7 +670,8 @@ export default function Contract() {
                             <div className='flex justify-start gap-4'>
                                 <p>A.</p>
                                 <p>
-                                    The closing of the sale will be on or before	<Input width={30} />, <Input width={20} />, or within 7 days
+                                    The closing of the sale will be on or before&nbsp;
+                                    <Input type={"date"} value={closingDate} setValue={setClosingDate} />, or within 7 days
                                     after objections made under Paragraph 6D have been cured or waived, whichever date is later (Closing Date). If either party fails to close the sale by the Closing Date, the non-defaulting party may exercise the remedies contained in Paragraph 15.
                                 </p>
                             </div>
@@ -913,89 +946,89 @@ export default function Contract() {
                             <div className='flex justify-between gap-6'>
                                 <div className='w-full'>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Third Party Financing Addendum</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Seller Financing Addendum</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for Property Subject to Mandatory Membership in a Property Owners Association</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Buyer's Temporary Residential Lease</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Loan Assumption Addendum</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for Sale of Other Property by Buyer</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for Reservation of Oil, Gas and Other Minerals</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for "Back-Up" Contract </p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for Coastal Area Property</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for Authorizing Hydrostatic Testing</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum Concerning Right to Terminate Due to Lender's Appraisal</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Environmental Assessment, Threatened or Endangered Species and Wetlands Addendum</p>
                                     </div>
                                 </div>
                                 <div className='w-full'>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Seller's Temporary Residential Lease</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Short Sale Addendum</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for Property Located Seaward of the Gulf Intracoastal Waterway</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for Seller's Disclosure of Information on Lead-based Paint and Lead-based Paint Hazards as Required by Federal Law</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum for Property in a Propane Gas System Service Area</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum Regarding Residential Leases</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum Regarding Fixture Leases</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p>Addendum containing Notice of Obligation to Pay Improvement District Assessment</p>
                                     </div>
                                     <div className='flex justify-start gap-3 items-start'>
-                                        <Input type={'checkbox'} className="mt-[6px]" />
+                                        <Checkbox className="mt-[4px]" />
                                         <p className=''>Other (list): <Input width={'64'} /></p>
                                     </div>
                                 </div>
@@ -1009,7 +1042,7 @@ export default function Contract() {
                             </p>
                             <div className='flex justify-between gap-6 mt-2'>
                                 <div className='w-full'>
-                                    <p className='flex whitespace-nowrap'>Buyer's Attorney is:<Input width={'full'} /> </p>
+                                    <p className='flex whitespace-nowrap'>Buyer's Attorney is: <Input width={'full'} value={buyerAttorney} setValue={setBuyerAttorney} /> </p>
                                     <div className='mt-2'>
                                         <Input width={'full'} />
                                     </div>
@@ -1068,6 +1101,7 @@ export default function Contract() {
                     <p className='text-sm'>The form of this contract has been approved by the Texas Real Estate Commission. TREC forms are intended for use only by trained real estate license holders. No representation is made as to the legal validity or adequacy of any provision in any specific transactions. It is not intended for   complex transactions. Texas Real Estate Commission, P.O. Box 12188, Austin, TX 78711-2188, (512) 936-3000 (http://www.trec.texas.gov) TREC NO. 20-17. This form replaces TREC NO. 20-16.</p>
                 </div>
             </div>
+            <Paginator activeStep={activeStep} moveNext={moveNext} />
         </div>
     )
 }

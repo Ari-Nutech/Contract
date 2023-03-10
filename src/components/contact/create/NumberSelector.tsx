@@ -22,12 +22,12 @@ export default function NumberSelector() {
     return (
         <Sticky topOffset={10}>
             {({ style }: any) =>
-                <div className='flex justify-start flex-wrap gap-1 bg-white py-3' style={style} id="header">
+                <div className='flex justify-between flex-wrap gap-1 bg-white py-3' style={style} id="header">
                     {
                         Array.from(Array(23), (e, i) => {
                             return <button
                                 key={i}
-                                className={`h-10 w-10 border border-black/30 rounded ${selectedNumber === i + 1 && "bg-[#2633ED] text-white"} shadow-sm`}
+                                className={`w-8 h-8 lg:w-9 lg:h-9 xl:h-10 xl:w-10 border border-black/30 rounded ${selectedNumber === i + 1 && "bg-[#2633ED] text-white"} shadow-sm`}
                                 onClick={() => handleClickScroll(i + 1)}
                             >{i + 1}</button>
                         })
